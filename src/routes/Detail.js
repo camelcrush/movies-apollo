@@ -67,16 +67,13 @@ const Detail = () => {
     <Container>
       <Column>
         <Title>{loading ? "Loading..." : data.movie.title}</Title>
-        {data && data.movie && (
-          <>
-            <Subtitle>
-              {data.movie.language} · {data.movie.rating}
-            </Subtitle>
-            <Description>{data.movie.description_intro} </Description>
-          </>
-        )}
+
+        <Subtitle>
+          {data?.movie?.language} · {data?.movie?.rating}
+        </Subtitle>
+        <Description>{data?.movie?.description_intro}</Description>
       </Column>
-      <Poster bg={data && data.movie ? data.movie.medium_cover_image : ""} />
+      <Poster bg={data?.movie?.medium_cover_image} />
     </Container>
   );
 };
